@@ -35,3 +35,10 @@ This currently will not:
         <h1>Headline</h1>
         <p>Text.</p>
     </div>
+    
+#### Bonus
+
+This plugin is chainable.
+The following will work.
+
+    $('.element').hide().equals().delay(400).slideDown(800)
