@@ -1,0 +1,37 @@
+# jQuery Equals™ Plugin
+
+A simple plugin to help maintain order amongst multiple elements that should really be the same size.
+
+## Usage:
+
+### Equalize the height only (default)
+
+    $('.element').equals();
+    
+### Equalize the width only
+    
+    $('.element').equals('width');
+    
+### Equalize the height &amp; width
+    
+    $('.element').equals('both');
+    
+### Center the content _(beta)_
+
+    $('.element').equals('both', true); // will equalize height and width and will center the content
+
+__Note:__ only supports single elements within the equalized container for now.
+For example, this will work:
+
+    <div class="element">
+        <a href="#">
+            <img src="sample-image.jpg" alt="Just proving my point." />
+        </a>
+    </div>
+    
+This currently will not:
+
+    <div class="element">
+        <h1>Headline</h1>
+        <p>Text.</p>
+    </div>
