@@ -20,7 +20,8 @@ A simple plugin to help maintain order amongst multiple elements that should rea
 
     $('.element').equals('both', true); // will equalize height and width and will center the content
 
-__Note:__ only supports single elements within the equalized container for now.
+__Note:__ Only supports single elements within the equalized container for now, buggy in all but Gecko browsers.
+
 For example, this will work:
 
     <div class="element">
@@ -39,6 +40,7 @@ This currently will not:
 #### Bonus
 
 This plugin is chainable.
+
 The following will work.
 
     $('.element').hide().equals().delay(400).slideDown(800)
