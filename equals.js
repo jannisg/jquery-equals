@@ -33,16 +33,19 @@
 				if ( axis == "width"  ) { $(this).width(newWidth);  				 };		// if we're dealing with the width, apply it.
 				if ( axis == "both"   ) { $(this).height(newHeight).width(newWidth); };		// if we're dealing with both, apply height and width.
 
-				if ( centered === true ) { 													// centering if this is set to 'true'
+				if ( centered ) { 													// centering if this is set to 'true'
 
 					var child = $(this).children(); 			// get the child of the equalised item
-					child.children().css('display','block');	// make sure the content is a block element (or at least rendered as such)
+					$(this).css('position','relative');
+					child.children().css({
+						'display':'block',
+						'margin' : 0
+					});	// make sure the content is a block element (or at least rendered as such)
 					child.css({
 						'display':'block',
-					  	'margin-right': ( $(this).width()  - child.width()  ) / 2 + 'px',
-					  	'margin-left': 	( $(this).width()  - child.width()  ) / 2 + 'px',
-						'margin-top': 	( $(this).height() - child.height() ) / 2 + 'px',
-						'margin-bottom':( $(this).height() - child.height() ) / 2 + 'px'
+						'position':'absolute',
+						'top':  ( $(this).height()/2 - child.outerHeight()/2 ) + 'px',
+						'left': ( $(this).width()/2 - child.outerWidth()/2 ) + 'px'
 					});
 
 				};
